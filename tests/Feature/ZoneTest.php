@@ -11,7 +11,7 @@ class ZoneTest extends TestCase
 
     use RefreshDatabase;
 
-    public function testPublicUserCanGetALlZones()
+    public function testPublicUserCanGetAllZones()
     {
         $response = $this->getJson('/api/v1/zones');
 
