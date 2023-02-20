@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 
 class ParkingController extends Controller
 {
+
+    public function show(Parking $parking)
+    {
+        return ParkingResource::make($parking);
+    }
+
     public function start(Request $request)
     {
         $parkingData = $request->validate([
@@ -23,4 +29,13 @@ class ParkingController extends Controller
     }
 
     // TODO Stop Parking.
+
+    public function stop(Parking $parking)
+    {
+        $parking->update([
+            'stop_time' => now()
+        ]);
+        
+        return ParkingResource::make($parking);
+    }
 }
