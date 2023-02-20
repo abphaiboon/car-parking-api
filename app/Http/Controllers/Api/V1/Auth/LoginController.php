@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * @group Auth
+ */
 class LoginController extends Controller
 {
     public function __invoke(LoginRequest $request)
